@@ -1,0 +1,107 @@
+/* ==========================================================================
+   1. DESIGN SYSTEM SYSTEM VARIABLES (FROM FIGMA)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* --- Surface & Backgrounds --- */
+  --color-bg-main: #0b0c0e;       
+  --color-surface: #16171a;       
+  --color-surface-hover: rgba(255, 255, 255, 0.04); 
+  --color-surface-active: rgba(255, 255, 255, 0.08); 
+  
+  /* --- Borders & Dividers --- */
+  --color-border: #26282c;        
+  
+  /* --- Brand Accent Colors --- */
+  --color-brand: #6366f1;         
+  
+  /* --- Typography Contrast --- */
+  --color-text-primary: #ffffff;  
+  --color-text-muted: #9ca3af;    
+  --color-text-placeholder: #4b5563; 
+
+  /* --- Radius --- */
+  --radius-md: 6px;               
+  --radius-lg: 12px;              
+  
+  /* --- Padding Arrays --- */
+  --pad-xs: 8px;                  
+  --pad-sm: 10px 16px;            
+  --pad-md: 14px;                 
+  --pad-lg: 16px 24px;            
+  --pad-xl: 24px;                 
+}
+
+/* ==========================================================================
+   2. GLOBAL ARCHITECTURE RESET
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-primary);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base resets to make HTML elements behave predictably */
+input, button, textarea {
+  font-family: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+button { cursor: pointer; }
+a { text-decoration: none; color: inherit; }
+
+/* ==========================================================================
+   3. TYPOGRAPHY SYSTEM (UTILITY CLASSES)
+   ========================================================================== */
+
+/* App Branding Title */
+.text-branding {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* Section Body / Description */
+.text-body {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* Input Fields / Sidebar Labels */
+.text-label {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+/* Search Placeholder Items */
+.text-placeholder {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+  color: var(--color-text-placeholder);
+}
+
+/* Inline Actions / Sub-label Links */
+.text-action {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  color: var(--color-brand);
+}
