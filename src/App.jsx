@@ -1,7 +1,7 @@
-import CodeInsight from "./apps/code-insight-fetcher/CodeInsight";
+import CodeInsightFetcher from "./apps/CodeInsightFetcher/CodeInsightFetcher";
 
-export default function app(){
+export default function App(){
     return(<>
-        <CodeInsight/>
+        <CodeInsightFetcher/>
     </>);
 }
