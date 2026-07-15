@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-    --bg-gradient: radial-gradient(circle at top left, #0e1118, #07090e);
-    --card-bg: rgba(18, 22, 33, 0.65);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --text-primary: #f3f4f6;
-    --text-secondary: #9ca3af;
-    --accent: #6366f1;
-    --accent-glow: rgba(99, 102, 241, 0.35);
-    --accent-hover: #4f46e5;
-    --badge-bg: rgba(99, 102, 241, 0.15);
-    --badge-border: rgba(99, 102, 241, 0.3);
-    --error-bg: rgba(239, 68, 68, 0.1);
-    --error-border: rgba(239, 68, 68, 0.25);
-    --error-text: #f87171;
-    --tag-bg: rgba(255, 255, 255, 0.05);
-    --tag-border: rgba(255, 255, 255, 0.1);
-    --code-bg: #0b0d13;
+    --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --card-border: rgba(0, 0, 0, 0.06);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent: #4f46e5;
+    --accent-glow: rgba(79, 70, 229, 0.12);
+    --accent-hover: #4338ca;
+    --badge-bg: rgba(79, 70, 229, 0.08);
+    --badge-border: rgba(79, 70, 229, 0.2);
+    --error-bg: #fef2f2;
+    --error-border: rgba(239, 68, 68, 0.2);
+    --error-text: #dc2626;
+    --tag-bg: #f1f5f9;
+    --tag-border: #e2e8f0;
+    --code-bg: #f8fafc;
 }
 
 body {
@@ -43,24 +43,26 @@ body {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--card-border);
-    border-radius: 24px;
+    border-radius: 20px;
     padding: 2.5rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
-                0 0 80px rgba(99, 102, 241, 0.03);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 
+                0 8px 10px -6px rgba(0, 0, 0, 0.03),
+                0 0 40px rgba(79, 70, 229, 0.01);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45), 
-                0 0 100px rgba(99, 102, 241, 0.06);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 
+                0 10px 10px -5px rgba(0, 0, 0, 0.04),
+                0 0 50px rgba(79, 70, 229, 0.02);
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(12px);
     }
     to {
         opacity: 1;
@@ -79,22 +81,21 @@ body {
     gap: 0.5rem;
     background: var(--badge-bg);
     border: 1px solid var(--badge-border);
-    color: #a5b4fc;
-    padding: 0.5rem 1rem;
+    color: var(--accent);
+    padding: 0.4rem 0.9rem;
     border-radius: 9999px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-bottom: 1rem;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
 }
 
 .title {
     font-size: 2.25rem;
     font-weight: 800;
     margin: 0 0 0.75rem 0;
-    background: linear-gradient(135deg, #ffffff 40%, #c7d2fe 100%);
+    background: linear-gradient(135deg, #0f172a 30%, #312e81 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -0.02em;
@@ -115,11 +116,11 @@ body {
     display: flex;
     gap: 0.75rem;
     position: relative;
-    border-radius: 16px;
+    border-radius: 14px;
     padding: 3px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: border-color 0.3s, box-shadow 0.3s;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    transition: border-color 0.25s, box-shadow 0.25s;
 }
 
 .input-wrapper:focus-within {
@@ -133,13 +134,13 @@ body {
     border: none;
     outline: none;
     color: var(--text-primary);
-    padding: 0.85rem 1rem;
-    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
     font-family: inherit;
 }
 
 #input-container::placeholder {
-    color: #4b5563;
+    color: #94a3b8;
 }
 
 #submit-button {
@@ -147,11 +148,11 @@ body {
     color: white;
     border: none;
     padding: 0 1.5rem;
-    border-radius: 12px;
+    border-radius: 10px;
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.2s, transform 0.1s, opacity 0.2s;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,7 +163,7 @@ body {
 }
 
 #submit-button:active {
-    transform: scale(0.97);
+    transform: scale(0.98);
 }
 
 #submit-button:disabled {
@@ -179,7 +180,7 @@ body {
 }
 
 .highlight {
-    color: #a5b4fc;
+    color: var(--accent);
     font-weight: 600;
 }
 
@@ -196,7 +197,7 @@ body {
 .spinner {
     width: 28px;
     height: 28px;
-    border: 3px solid rgba(99, 102, 241, 0.1);
+    border: 3px solid rgba(79, 70, 229, 0.1);
     border-top: 3px solid var(--accent);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
@@ -210,7 +211,7 @@ body {
 .error-message {
     background: var(--error-bg);
     border: 1px solid var(--error-border);
-    border-radius: 16px;
+    border-radius: 14px;
     padding: 1rem 1.25rem;
     display: flex;
     align-items: center;
@@ -251,16 +252,18 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
 }
 
 .badge {
     background: var(--badge-bg);
     border: 1px solid var(--badge-border);
-    color: #a5b4fc;
+    color: var(--accent);
     font-size: 0.75rem;
     font-weight: 600;
     padding: 0.25rem 0.75rem;
     border-radius: 6px;
+    display: inline-block;
 }
 
 .meta-info {
@@ -289,12 +292,12 @@ body {
 .description {
     font-size: 0.95rem;
     line-height: 1.6;
-    color: #d1d5db;
+    color: #334155;
     margin: 0 0 1.75rem 0;
 }
 
 .features-section h3 {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--text-secondary);
@@ -311,26 +314,27 @@ body {
 .feature-tag {
     background: var(--tag-bg);
     border: 1px solid var(--tag-border);
-    color: #e5e7eb;
+    color: #334155;
     font-size: 0.85rem;
     padding: 0.35rem 0.85rem;
     border-radius: 8px;
-    transition: background-color 0.2s, border-color 0.2s;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 }
 
 .feature-tag:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: #e2e8f0;
+    border-color: #cbd5e1;
+    color: #0f172a;
 }
 
 .code-section {
-    border-radius: 16px;
+    border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--card-border);
 }
 
 .code-header {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(0, 0, 0, 0.02);
     border-bottom: 1px solid var(--card-border);
     padding: 0.75rem 1.25rem;
     display: flex;
@@ -343,7 +347,7 @@ body {
 
 .copy-btn {
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     color: var(--text-secondary);
     padding: 0.25rem 0.75rem;
     border-radius: 6px;
@@ -354,9 +358,9 @@ body {
 }
 
 .copy-btn:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.04);
     color: var(--text-primary);
-    border-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(0, 0, 0, 0.15);
 }
 
 .code-block {
@@ -368,7 +372,7 @@ body {
 
 .code-block code {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.5;
-    color: #c7d2fe;
+    color: #1e293b;
 }

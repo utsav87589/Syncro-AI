@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import useFetchInsight from "./useFetchInsight";
 import "./CodeInsightFetcher.css";
 
